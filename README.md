@@ -23,7 +23,7 @@ htdocs/taskapp/          ← Place this entire folder inside XAMPP's htdocs
 │   ├── style.css        ← All styles
 │   └── app.js           ← All JavaScript logic
 │
-└── setup.sql            ← Run once in phpMyAdmin to create DB + tables
+
 ```
 
 ---
@@ -66,7 +66,7 @@ C:\xampp\htdocs\taskapp\
         index.html
         style.css
         app.js
-    setup.sql
+    
 ```
 
 ---
@@ -74,10 +74,7 @@ C:\xampp\htdocs\taskapp\
 ## Step 3 — Set Up the Database
 
 1. Open your browser and go to: **http://localhost/phpmyadmin**
-2. Click the **SQL** tab at the top.
-3. Open `setup.sql` in a text editor, copy all the content.
-4. Paste it into the SQL text box in phpMyAdmin.
-5. Click **Go**.
+2. Connect the database.
 
 You should see a success message. The `task_app` database will appear in the left sidebar with two tables: `users` and `tasks`.
 
@@ -116,7 +113,7 @@ You should see the TaskApp login screen.
 
 ## Step 6 — Test the Full System
 
-### ✅ Checklist
+###  Checklist
 
 | Test | Expected Result |
 |------|----------------|
@@ -128,7 +125,7 @@ You should see the TaskApp login screen.
 | Click the logout button (→ icon) | Returns to login screen |
 | Sign in again | Tasks are still there |
 
-### 🔍 Verify via phpMyAdmin
+###  Verify via phpMyAdmin
 
 1. Go to `http://localhost/phpmyadmin`
 2. Click **task_app** → **users** → **Browse** — your user should appear.
@@ -207,6 +204,4 @@ PHP encodes as JSON → Apache sends response → JavaScript parses → UI updat
 
 ---
 
-## Security Notes
 
-The backend uses plain string interpolation in SQL queries which is vulnerable to SQL injection. For a production app, switch to **prepared statements**. The frontend provided here is safe (it escapes HTML before rendering). This project is intended for learning/local use.
